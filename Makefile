@@ -23,11 +23,18 @@ check:
 ci: init
 	@glide install
 	@make check
+	@make test
 
-.PHONY: build
-build: check
-	go build -ldflags '$(LDFLAGS)'
+.PHONY: test
+test:
+	go test ./leakybuffer
+	go test ./bitset
+	go test ./bloomfilter
+	go test ./hashring
+	go test ./lrucache
+	go test ./trie
+	go test ./sort
+	go test ./avl
+	go test ./guid
+	go test ./graph
 
-.PHONY: install
-install: check
-	go install -ldflags '$(LDFLAGS)'
