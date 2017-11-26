@@ -38,4 +38,5 @@ test:
 	go test ./avl
 	go test ./guid
 	go test ./graph
+	go test ./dag
 
